@@ -1,0 +1,146 @@
+info:
+  contact: {}
+paths:
+  /index:
+    get:
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      tags:
+      - 首页
+  /user/create_user:
+    post:
+      parameters:
+      - description: UID
+        in: query
+        maxLength: 100
+        name: UID
+        required: true
+        type: string
+      - description: 用户名
+        in: query
+        maxLength: 100
+        name: name
+        required: true
+        type: string
+      - description: 密码
+        in: query
+        maxLength: 100
+        name: password
+        required: true
+        type: string
+      - description: 确认密码
+        in: query
+        maxLength: 100
+        name: repassword
+        required: true
+        type: string
+      - description: email
+        in: query
+        maxLength: 100
+        name: email
+        required: true
+        type: string
+      - description: phone
+        in: query
+        maxLength: 100
+        name: phone
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: code","message"}
+          schema:
+            type: string
+        "400":
+          description: code","message"}
+          schema:
+            type: string
+      summary: 创建用户
+      tags:
+      - 用户模块
+  /user/delete_user:
+    post:
+      parameters:
+      - description: UID
+        in: query
+        name: UID
+        required: true
+        type: string
+      - description: 用户名
+        in: query
+        maxLength: 100
+        name: name
+        required: true
+        type: string
+      - description: 密码
+        in: query
+        maxLength: 100
+        name: password
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: code","message"}
+          schema:
+            type: string
+        "400":
+          description: code","message"}
+          schema:
+            type: string
+      summary: 删除用户
+      tags:
+      - 用户模块
+  /user/update_user:
+    post:
+      parameters:
+      - description: UID
+        in: query
+        name: UID
+        required: true
+        type: string
+      - description: name
+        in: query
+        maxLength: 100
+        name: name
+        required: true
+        type: string
+      - description: password
+        in: query
+        maxLength: 100
+        name: password
+        required: true
+        type: string
+      - description: new name
+        in: query
+        maxLength: 100
+        name: new_name
+        required: true
+        type: string
+      - description: new password
+        in: query
+        maxLength: 100
+        name: new_password
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: code","message"}
+          schema:
+            type: string
+        "400":
+          description: code","message"}
+          schema:
+            type: string
+      summary: 修改用户
+      tags:
+      - 用户模块
+swagger: "2.0"
